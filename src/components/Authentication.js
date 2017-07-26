@@ -65,7 +65,7 @@ class Authentication extends React.Component {
         const inputBoxes = (
             <div>
                 <div className="input-field col s12 username">
-                    <label>Username</label>
+                    <label>ID</label>
                     <input
                     name="username"
                     type="text"
@@ -75,7 +75,7 @@ class Authentication extends React.Component {
                     />
                 </div>
                 <div className="input-field col s12">
-                    <label>Password</label>
+                    <label>PW</label>
                     <input
                     name="password"
                     type="password"
