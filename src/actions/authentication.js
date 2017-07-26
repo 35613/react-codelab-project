@@ -1,7 +1,7 @@
 import {
     AUTH_LOGIN,
     AUTH_LOGIN_SUCCESS,
-    AUTH_LOGIN_FAILURE,
+    AUTH_LOGIN_FAILIURE,
     AUTH_REGISTER,
     AUTH_REGISTER_SUCCESS,
     AUTH_REGISTER_FAILURE,
@@ -23,7 +23,7 @@ export function loginRequest(username, password) {
             .then((response) => {
                 dispatch(loginSuccess(username));
             }).catch((error) => {
-                dispatch(loginFailure());
+                dispatch(loginFailure(error.response.data.code));
             });
     };
 }
@@ -41,9 +41,10 @@ export function loginSuccess(username) {
     };
 }
 
-export function loginFailure() {
+export function loginFailure(error) {
     return {
-        type: AUTH_LOGIN_FAILURE
+        type: AUTH_LOGIN_FAILIURE,
+        error
     };
 }
 

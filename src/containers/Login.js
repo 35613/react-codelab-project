@@ -28,7 +28,7 @@ class Login extends React.Component {
                     return true;
                 } else {
                     let $toastContent = $('<span style="color: #FFB4BA">Incorrect username or password</span>');
-                    Materialize.toast($toastContet, 2000);
+                    Materialize.toast($toastContent, 2000);
                     return false;
                 }
             }
@@ -47,7 +47,8 @@ class Login extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        status: state.authentication.login.status
+        status: state.authentication.login.status,
+        errorCode: state.authentication.register.error
     };
 };
 
